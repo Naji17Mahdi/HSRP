@@ -1,0 +1,18 @@
+ON 4Mbps ROUTER:
+Router>enable 
+Router#configure 
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#no shutdown 
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#standby 1 ip 192.168.10.3
+Router(config-if)#standby 1 priority 110
+Router(config-if)#standby 1 preempt 
+
+ON 256Kbps ROUTER:
+Router>enable 
+Router#configure 
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#no shutdown 
+Router(config-if)#ip address 192.168.10.2 255.255.255.0
+Router(config-if)#standby 1 ip 192.168.10.3 
+Router(config-if)#standby 1 priority 100
